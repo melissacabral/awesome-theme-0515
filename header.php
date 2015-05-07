@@ -3,7 +3,9 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width" />
-	<title><?php bloginfo('name'); ?> - <?php bloginfo('description'); ?></title>
+
+	<title><?php wp_title( ' :: ', true, 'right' ); ?></title>
+
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<!-- HTML5 shiv -->
 	<!--[if lt IE 9]>
@@ -20,6 +22,11 @@
 	<div id="wrapper">
 	<header role="banner">
 		<div class="top-bar clearfix">
+
+			<!-- add_theme_support for header image in functions.php 
+			<img src="<?php header_image(); ?>">
+			-->
+
 			<h1 class="site-name">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo( 'name' ) ?>" rel="home"> 
 					<?php bloginfo('name'); ?> 
