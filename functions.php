@@ -60,4 +60,17 @@ function awesome_comment_reply(){
 }
 add_action( 'wp_print_scripts', 'awesome_comment_reply' );
 
+/**
+ * Add Menu Areas
+ * @since 0.1
+ */
+function awesome_menus(){
+	register_nav_menus( array(
+		// 'code name' => 'nice name'
+		'main_nav' 	=> 'Main Navigation Area',
+		'utilities' => 'Utility Area',
+	) );
+}
+add_action( 'init', 'awesome_menus' );
+
 //no close PHP

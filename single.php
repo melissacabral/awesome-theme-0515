@@ -31,13 +31,16 @@
 				<p><a href="<?php the_author_meta('user_url'); ?>">
 					Visit <?php the_author_meta('display_name'); ?>'s website
 				</a></p>
-			</footer>	
-
-			
-				
-				
+			</footer>				
 				
 		</article><!-- end post -->
+
+		<section class="pagination">
+			<?php 
+			previous_post_link( '%link', '&larr; Earlier: %title' ); 	//1 older post
+			next_post_link( '%link', 'Later: %title &rarr;' ); 		//1 newer post
+			 ?>
+		</section>
 
 		<?php comments_template(); ?>
 

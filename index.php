@@ -34,6 +34,20 @@
 		</article><!-- end post -->
 
 		<?php endwhile; ?>
+
+		<section class="pagination">
+			<?php 
+			//make sure pagenavi plugin is running before calling it
+			if( function_exists('wp_pagenavi') ){
+				wp_pagenavi();
+			}else{
+				//pagenavi is not active. show default pagination
+				$number = get_option('posts_per_page');
+				previous_posts_link( "&larr; $number Newer Posts" );
+				next_posts_link( "$number Older Posts &rarr;" );
+			} 
+			?>
+		</section>
 	<?php else: ?>
 
 	<h2>Sorry, no posts found</h2>
