@@ -27,6 +27,9 @@ add_editor_style();
 //				name     width height crop?
 add_image_size( 'banner', 1300, 300, true );
 
+//maximum width for auto embeds
+if ( ! isset( $content_width ) ) $content_width = 700;
+
 
 /**
  * Make excerpts better
