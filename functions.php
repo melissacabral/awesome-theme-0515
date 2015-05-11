@@ -73,4 +73,56 @@ function awesome_menus(){
 }
 add_action( 'init', 'awesome_menus' );
 
+
+/**
+ * Add Widget Areas (dynamic sidebars)
+ * @since  0.1 
+ */
+function awesome_widget_areas(){
+	register_sidebar( array(
+		'name' 			=> 'Blog Sidebar',
+		'id' 			=> 'blog_sidebar',
+		'description' 	=> 'these widgets will appear next to the blog and archives',
+		//front-end HTML wrappers. Make these work with your own markup
+		'before_widget'	=> '<section id="%1$s" class="widget %2$s">',
+		'after_widget'	=> '</section>',
+		'before_title'	=> '<h3 class="widget-title">',
+		'after_title' 	=> '</h3>',
+	) );
+	register_sidebar( array(
+		'name' 			=> 'Footer Widgets',
+		'id' 			=> 'footer_widgets',
+		'description' 	=> 'these widgets will appear at the bottom of every screen',
+		//front-end HTML wrappers. Make these work with your own markup
+		'before_widget'	=> '<section id="%1$s" class="widget %2$s">',
+		'after_widget'	=> '</section>',
+		'before_title'	=> '<h3 class="widget-title">',
+		'after_title' 	=> '</h3>',
+	) );
+	register_sidebar( array(
+		'name' 			=> 'Page Sidebar',
+		'id' 			=> 'page_sidebar',
+		'description' 	=> 'these widgets will appear next to static pages',
+		//front-end HTML wrappers. Make these work with your own markup
+		'before_widget'	=> '<section id="%1$s" class="widget %2$s">',
+		'after_widget'	=> '</section>',
+		'before_title'	=> '<h3 class="widget-title">',
+		'after_title' 	=> '</h3>',
+	) );
+	register_sidebar( array(
+		'name' 			=> 'Home Widgets',
+		'id' 			=> 'home_widgets',
+		'description' 	=> 'these widgets will appear on the front page',
+		//front-end HTML wrappers. Make these work with your own markup
+		'before_widget'	=> '<section id="%1$s" class="widget %2$s">',
+		'after_widget'	=> '</section>',
+		'before_title'	=> '<h3 class="widget-title">',
+		'after_title' 	=> '</h3>',
+	) );
+}
+add_action( 'widgets_init', 'awesome_widget_areas' );
+
+
+
+
 //no close PHP
